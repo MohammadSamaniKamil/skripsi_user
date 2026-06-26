@@ -17,6 +17,115 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="collapsed",
 )
+# ─── THEME SWITCHER ─────────────────────────────────────────
+def apply_theme(mode="Terang"):
+
+    if mode == "Gelap":
+        bg = "#0F172A"
+        card = "#1E293B"
+        text = "#F8FAFC"
+        sub = "#CBD5E1"
+        border = "#334155"
+
+    else:
+        bg = "#F6F8FC"
+        card = "#FFFFFF"
+        text = "#0F172A"
+        sub = "#64748B"
+        border = "#E2E8F0"
+
+    st.markdown(f"""
+    <style>
+
+    .stApp {{
+        background:{bg};
+    }}
+
+    html,body,[class*="css"] {{
+        color:{text};
+    }}
+
+    #MainMenu,footer,header {{
+        visibility:hidden;
+    }}
+
+    .block-container {{
+        max-width:900px;
+        padding-top:2rem;
+    }}
+
+    .hero {{
+        background:{card};
+        color:{text};
+
+        border-radius:22px;
+
+        padding:34px;
+
+        border:1px solid {border};
+
+        box-shadow:
+        0 8px 30px rgba(0,0,0,.06);
+    }}
+
+    .hero h1 {{
+        color:{text};
+    }}
+
+    .hero p {{
+        color:{sub};
+    }}
+
+    .input-card,
+    .result-hero,
+    .model-pill,
+    .pas-card,
+    [data-testid="stMetric"] {{
+
+        background:{card};
+
+        color:{text};
+
+        border:1px solid {border};
+
+        border-radius:18px;
+
+    }}
+
+    .stNumberInput input,
+    .stSlider {{
+        background:{card};
+        color:{text};
+    }}
+
+    .stButton button {{
+
+        background:#2563EB;
+
+        color:white;
+
+        border-radius:14px;
+
+        height:54px;
+
+        border:none;
+
+    }}
+
+    .app-footer {{
+        color:{sub};
+    }}
+
+    section[data-testid="stSidebar"] {{
+
+        background:{card};
+
+        border-right:1px solid {border};
+
+    }}
+
+    </style>
+    """, unsafe_allow_html=True)
 
 # ─── CSS ───────────────────────────────────────────────────────────────────────
 st.markdown("""
@@ -146,6 +255,20 @@ st.markdown("""
   .stButton > button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(13,71,161,0.4); }
 </style>
 """, unsafe_allow_html=True)
+# ─── TOGGLE MODE ─────────────────────────
+
+with st.sidebar:
+
+    st.markdown("### 🎨 Tampilan")
+
+    tema = st.toggle(
+        "Mode Gelap",
+        value=False
+    )
+
+apply_theme(
+    "Gelap" if tema else "Terang"
+)
 
 
 # ─── Load ──────────────────────────────────────────────────────────────────────
