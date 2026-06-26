@@ -209,11 +209,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ─── INPUT FORM ────────────────────────────────────────────────────────────────
-st.markdown("""
-<div class="input-card">
-  <h3>🏠 Spesifikasi Rumah</h3>
-</div>
-""", unsafe_allow_html=True)
 
 with st.container():
     col1, col2 = st.columns(2)
@@ -227,8 +222,7 @@ with st.container():
             help="Luas total area bangunan dalam meter persegi",
             label_visibility="collapsed"
         )
-        st.caption(f"Data: min {int(meta['stats']['luas_bangunan']['min'])} m² · rata-rata {meta['stats']['luas_bangunan']['mean']} m² · max {int(meta['stats']['luas_bangunan']['max'])} m²")
-
+        
     with col2:
         st.markdown("**🌿 Luas Tanah (m²)**")
         luas_tanah = st.number_input(
@@ -238,8 +232,7 @@ with st.container():
             help="Luas total area tanah dalam meter persegi",
             label_visibility="collapsed"
         )
-        st.caption(f"Data: min {int(meta['stats']['luas_tanah']['min'])} m² · rata-rata {meta['stats']['luas_tanah']['mean']} m² · max {int(meta['stats']['luas_tanah']['max'])} m²")
-
+        
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Slider visual
