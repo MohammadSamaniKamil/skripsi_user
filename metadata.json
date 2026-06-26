@@ -1,0 +1,142 @@
+{
+  "fitur_terpilih": [
+    "luas_bangunan",
+    "luas_tanah"
+  ],
+  "fitur_awal": [
+    "luas_bangunan",
+    "luas_tanah",
+    "aksesibilitas_jalan",
+    "jumlah_kamar_tidur",
+    "jumlah_kamar_mandi",
+    "jumlah_lantai"
+  ],
+  "hasil_evaluasi": [
+    {
+      "Model": "Multiple Linear Regression",
+      "R2": 0.9004,
+      "MAE": 139246946.0,
+      "RMSE": 187202054.0,
+      "MAPE": 26.56
+    },
+    {
+      "Model": "Random Forest Regression",
+      "R2": 0.7789,
+      "MAE": 198447801.0,
+      "RMSE": 278850018.0,
+      "MAPE": 30.09
+    },
+    {
+      "Model": "Support Vector Regression",
+      "R2": 0.8746,
+      "MAE": 153475387.0,
+      "RMSE": 210004560.0,
+      "MAPE": 26.88
+    }
+  ],
+  "korelasi": {
+    "luas_bangunan": 0.6723,
+    "luas_tanah": 0.9404,
+    "aksesibilitas_jalan": 0.0222,
+    "jumlah_kamar_tidur": 0.1224,
+    "jumlah_kamar_mandi": 0.0469,
+    "jumlah_lantai": 0.3233
+  },
+  "vif": {
+    "luas_bangunan": 2.018,
+    "luas_tanah": 1.653,
+    "aksesibilitas_jalan": 1.105,
+    "jumlah_kamar_tidur": 1.553,
+    "jumlah_kamar_mandi": 1.48,
+    "jumlah_lantai": 1.342
+  },
+  "feature_importance": {
+    "luas_tanah": 0.8943,
+    "luas_bangunan": 0.0677,
+    "jumlah_kamar_tidur": 0.0111,
+    "jumlah_lantai": 0.0108,
+    "aksesibilitas_jalan": 0.0082,
+    "jumlah_kamar_mandi": 0.0079
+  },
+  "model_terbaik": "Multiple Linear Regression",
+  "mlr_koef": {
+    "luas_bangunan": 1056576.01,
+    "luas_tanah": 746166.43
+  },
+  "mlr_intercept": 179180189.79,
+  "rfr_best_params": {
+    "max_depth": 5,
+    "min_samples_leaf": 1,
+    "n_estimators": 100
+  },
+  "svr_best_params": {
+    "C": 1,
+    "epsilon": 0.1,
+    "gamma": "auto"
+  },
+  "shapiro_p": 0.0,
+  "bp_lm_p": 0.003,
+  "f_stat": 444.2975,
+  "f_pvalue": 0.0,
+  "uji_t": {
+    "luas_bangunan": {
+      "koef": 1056576.01,
+      "t_hitung": 4.4056,
+      "p_value": 0.0,
+      "signifikan": true
+    },
+    "luas_tanah": {
+      "koef": 746166.43,
+      "t_hitung": 21.2423,
+      "p_value": 0.0,
+      "signifikan": true
+    }
+  },
+  "beta_std": {
+    "luas_tanah": 0.8421,
+    "luas_bangunan": 0.1746
+  },
+  "fitur_dominan": "luas_tanah",
+  "r2_adj": 0.9106,
+  "n_data": 110,
+  "n_train": 88,
+  "n_test": 22,
+  "stats": {
+    "luas_bangunan": {
+      "min": 30.0,
+      "max": 975.0,
+      "mean": 187.9,
+      "median": 113.0
+    },
+    "luas_tanah": {
+      "min": 30.0,
+      "max": 9396.0,
+      "mean": 703.4,
+      "median": 288.0
+    },
+    "aksesibilitas_jalan": {
+      "min": 1.0,
+      "max": 3.0,
+      "mean": 2.1,
+      "median": 2.0
+    },
+    "jumlah_kamar_tidur": {
+      "min": 1.0,
+      "max": 7.0,
+      "mean": 2.6,
+      "median": 2.0
+    },
+    "jumlah_kamar_mandi": {
+      "min": 1.0,
+      "max": 4.0,
+      "mean": 1.7,
+      "median": 2.0
+    },
+    "jumlah_lantai": {
+      "min": 1.0,
+      "max": 3.0,
+      "mean": 1.3,
+      "median": 1.0
+    }
+  }
+}
