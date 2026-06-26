@@ -210,11 +210,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ─── INPUT FORM ────────────────────────────────────────────────────────────────
-st.markdown("""
-<div class="input-card">
-  <h3>🏠 Spesifikasi Rumah</h3>
-</div>
-""", unsafe_allow_html=True)
 
 with st.container():
     col1, col2 = st.columns(2)
