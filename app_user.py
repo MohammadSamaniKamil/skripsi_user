@@ -204,17 +204,11 @@ st.markdown("""
 <div class="hero">
   <div class="badge-loc">📍 Kecamatan Cidahu, Kabupaten Sukabumi</div>
   <h1>🏡 Estimasi Harga Rumah</h1>
-  <p>Masukkan spesifikasi rumah Anda dan dapatkan estimasi harga jual<br>
-  berdasarkan data <b>110 transaksi nyata</b> di Kecamatan Cidahu</p>
+  <p>Masukkan spesifikasi rumah Anda dan dapatkan estimasi harga jual di Kecamatan Cidahu</p>
 </div>
 """, unsafe_allow_html=True)
 
 # ─── INPUT FORM ────────────────────────────────────────────────────────────────
-st.markdown("""
-<div class="input-card">
-  <h3>🏠 Spesifikasi Rumah</h3>
-</div>
-""", unsafe_allow_html=True)
 
 with st.container():
     col1, col2 = st.columns(2)
@@ -228,7 +222,6 @@ with st.container():
             help="Luas total area bangunan dalam meter persegi",
             label_visibility="collapsed"
         )
-        st.caption(f"Data: min {int(meta['stats']['luas_bangunan']['min'])} m² · rata-rata {meta['stats']['luas_bangunan']['mean']} m² · max {int(meta['stats']['luas_bangunan']['max'])} m²")
 
     with col2:
         st.markdown("**🌿 Luas Tanah (m²)**")
@@ -239,17 +232,8 @@ with st.container():
             help="Luas total area tanah dalam meter persegi",
             label_visibility="collapsed"
         )
-        st.caption(f"Data: min {int(meta['stats']['luas_tanah']['min'])} m² · rata-rata {meta['stats']['luas_tanah']['mean']} m² · max {int(meta['stats']['luas_tanah']['max'])} m²")
 
     st.markdown("<br>", unsafe_allow_html=True)
-
-    # Slider visual
-    st.markdown("**atau geser slider ↓**")
-    col3, col4 = st.columns(2)
-    with col3:
-        luas_bangunan = st.slider("Luas Bangunan (m²) ", 20, 1000, luas_bangunan, 5, label_visibility="collapsed")
-    with col4:
-        luas_tanah    = st.slider("Luas Tanah (m²) ", 20, 10000, luas_tanah, 10, label_visibility="collapsed")
 
     st.markdown("<br>", unsafe_allow_html=True)
     hitung = st.button("🔍  Hitung Estimasi Harga", use_container_width=True)
