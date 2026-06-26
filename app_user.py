@@ -479,12 +479,4 @@ if hitung or True:   # auto-show on load
     </div>
     """, unsafe_allow_html=True)
 
-# ─── FOOTER ────────────────────────────────────────────────────────────────────
-st.markdown("""
-<div class="app-footer">
-  🏠 Estimasi Harga Rumah Kecamatan Cidahu · Berbasis data 110 transaksi nyata<br>
-  Model: MLR (R²=0.90) · RFR (R²=0.78) · SVR (R²=0.87)<br>
-  Mohammad Samani Kamil — 2230511071 | Teknik Informatika UMMI 2025
-</div>
-""", unsafe_allow_html=True)
 
