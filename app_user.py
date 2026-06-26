@@ -205,7 +205,7 @@ st.markdown("""
   <div class="badge-loc">📍 Kecamatan Cidahu, Kabupaten Sukabumi</div>
   <h1>🏡 Estimasi Harga Rumah</h1>
   <p>Masukkan spesifikasi rumah Anda dan dapatkan estimasi harga jual<br>
-  \</b> di Kecamatan Cidahu</p>
+  </b> di Kecamatan Cidahu</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -265,8 +265,7 @@ if hitung or True:   # auto-show on load
     <div class="result-hero">
       <div class="label">Estimasi Harga Jual Terbaik</div>
       <div class="price">{fmt_rp(best_pred, short=True)}</div>
-      <div class="sub">berdasarkan model Multiple Linear Regression (R² = 0.90)</div>
-      <div class="range">📊 Kisaran wajar: {fmt_rp_range(low_est, high_est)}</div>
+      <div class="sub">berdasarkan model Multiple Linear Regression (akurasi = 90%) </div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -290,14 +289,6 @@ if hitung or True:   # auto-show on load
               <div class="m-badge">{badge}</div>
             </div>
             """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="info-box">
-    💡 <b>Mengapa ada 3 angka berbeda?</b> Setiap algoritma mempunyai cara belajar yang berbeda dari data.
-    Model <b>MLR (Multiple Linear Regression)</b> dipilih sebagai referensi utama karena memiliki akurasi tertinggi
-    (R²=0.90) pada data rumah Kecamatan Cidahu.
-    </div>
-    """, unsafe_allow_html=True)
 
     # ── Gauge chart harga vs data
     st.markdown('<div class="sec-hdr">📍 Posisi Harga vs Data Pasar</div>', unsafe_allow_html=True)
@@ -327,7 +318,7 @@ if hitung or True:   # auto-show on load
         title={"text":"Posisi harga estimasi dalam rentang data pasar Kec. Cidahu",
                "font":{"size":13}},
     ))
-    fig_gauge.update_layout(height=280, margin=dict(t=60,b=10,l=30,r=30), paper_bgcolor="white")
+    fig_gauge.update_layout(height=280, margin=dict(t=60,b=10,l=30,r=30), paper_bgcolor="green")
     st.plotly_chart(fig_gauge, use_container_width=True)
 
     # Label segmen
