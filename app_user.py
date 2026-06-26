@@ -205,7 +205,7 @@ st.markdown("""
   <div class="badge-loc">📍 Kecamatan Cidahu, Kabupaten Sukabumi</div>
   <h1>🏡 Estimasi Harga Rumah</h1>
   <p>Masukkan spesifikasi rumah Anda dan dapatkan estimasi harga jual<br>
-  berdasarkan data <b>110 transaksi nyata</b> di Kecamatan Cidahu</p>
+  \</b> di Kecamatan Cidahu</p>
 </div>
 """, unsafe_allow_html=True)
 
