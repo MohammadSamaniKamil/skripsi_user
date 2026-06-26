@@ -318,7 +318,7 @@ if hitung or True:   # auto-show on load
         title={"text":"Posisi harga estimasi dalam rentang data pasar Kec. Cidahu",
                "font":{"size":13}},
     ))
-    fig_gauge.update_layout(height=280, margin=dict(t=60,b=10,l=30,r=30), paper_bgcolor="black")
+    fig_gauge.update_layout(height=280, margin=dict(t=60,b=10,l=30,r=30), paper_bgcolor="white")
     st.plotly_chart(fig_gauge, use_container_width=True)
 
     # Label segmen
