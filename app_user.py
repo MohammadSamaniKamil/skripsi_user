@@ -236,12 +236,7 @@ with st.container():
     st.markdown("<br>", unsafe_allow_html=True)
 
     # Slider visual
-    st.markdown("**atau geser slider ↓**")
-    col3, col4 = st.columns(2)
-    with col3:
-        luas_bangunan = st.slider("Luas Bangunan (m²) ", 20, 1000, luas_bangunan, 5, label_visibility="collapsed")
-    with col4:
-        luas_tanah    = st.slider("Luas Tanah (m²) ", 20, 10000, luas_tanah, 10, label_visibility="collapsed")
+
 
     st.markdown("<br>", unsafe_allow_html=True)
     hitung = st.button("🔍  Hitung Estimasi Harga", use_container_width=True)
