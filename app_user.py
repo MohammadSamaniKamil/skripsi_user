@@ -283,13 +283,6 @@ if hitung or True:   # auto-show on load
             </div>
             """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="info-box">
-    💡 <b>Mengapa ada 3 angka berbeda?</b> Setiap algoritma mempunyai cara belajar yang berbeda dari data.
-    Model <b>MLR (Multiple Linear Regression)</b> dipilih sebagai referensi utama karena memiliki akurasi tertinggi
-    (R²=0.90) pada data rumah Kecamatan Cidahu.
-    </div>
-    """, unsafe_allow_html=True)
 
     # ── Gauge chart harga vs data
     st.markdown('<div class="sec-hdr">📍 Posisi Harga vs Data Pasar</div>', unsafe_allow_html=True)
@@ -428,13 +421,6 @@ if hitung or True:   # auto-show on load
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown("""
-    <div class="tip-box">
-    💡 <b>Tips:</b> Di Kecamatan Cidahu, <b>luas tanah adalah faktor penentu harga yang paling dominan</b> (~89%).
-    Rumah dengan luas tanah yang lebih besar cenderung memiliki harga jual yang jauh lebih tinggi,
-    bahkan jika bangunannya relatif kecil.
-    </div>
-    """, unsafe_allow_html=True)
 
     # ── Simulasi harga berdasarkan luas tanah
     st.markdown('<div class="sec-hdr">📊 Simulasi Harga Berdasarkan Luas Tanah</div>', unsafe_allow_html=True)
