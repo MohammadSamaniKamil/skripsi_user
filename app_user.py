@@ -471,12 +471,4 @@ if hitung or True:   # auto-show on load
         - Lakukan survei lapangan untuk verifikasi kondisi fisik
         """)
 
-    st.markdown("""
-    <div class="tip-box">
-    ⚠️ <b>Catatan penting:</b> Estimasi ini dihasilkan dari model Machine Learning berdasarkan data
-    historis 110 transaksi di Kecamatan Cidahu. Harga aktual dapat berbeda tergantung kondisi fisik rumah,
-    negosiasi, dan kondisi pasar saat transaksi. Margin kesalahan rata-rata model terbaik (MLR): <b>±Rp 139 Juta</b>.
-    </div>
-    """, unsafe_allow_html=True)
-
 
