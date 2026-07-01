@@ -68,19 +68,19 @@ st.markdown("""
     flex:1; min-width:180px; border-radius:12px; padding:14px 16px; text-align:center;
     border: 1.5px solid transparent;
   }
-  .pill-mlr { background:#e3f2fd; border-color:#1565c0; }
-  .pill-rfr { background:#e8f5e9; border-color:#2e7d32; }
-  .pill-svr { background:#f3e5f5; border-color:#6a1b9a; }
+  .pill-mlr { background:#dbeeff; border-color:#1565c0; }
+  .pill-rfr { background:#d6f5dc; border-color:#2e7d32; }
+  .pill-svr { background:#eedff7; border-color:#6a1b9a; }
   .model-pill .m-label { font-size:10px; font-weight:700; text-transform:uppercase;
     letter-spacing:0.5px; margin-bottom:4px; }
-  .pill-mlr .m-label { color:#0d47a1; }
-  .pill-rfr .m-label { color:#1b5e20; }
-  .pill-svr .m-label { color:#4a148c; }
+  .pill-mlr .m-label { color:#0a3880; }   /* lebih gelap agar kontras di bg biru muda */
+  .pill-rfr .m-label { color:#145214; }   /* lebih gelap agar kontras di bg hijau muda */
+  .pill-svr .m-label { color:#3a0070; }   /* lebih gelap agar kontras di bg ungu muda */
   .model-pill .m-price { font-size:18px; font-weight:800; }
-  .pill-mlr .m-price { color:#0d47a1; }
-  .pill-rfr .m-price { color:#1b5e20; }
-  .pill-svr .m-price { color:#4a148c; }
-  .model-pill .m-badge { font-size:10px; margin-top:3px; opacity:0.7; }
+  .pill-mlr .m-price { color:#0a3880; }
+  .pill-rfr .m-price { color:#145214; }
+  .pill-svr .m-price { color:#3a0070; }
+  .model-pill .m-badge { font-size:10px; margin-top:3px; color:#444; font-weight:600; }  /* hapus opacity, pakai warna solid */
   .best-pill { box-shadow: 0 4px 12px rgba(13,71,161,0.2); transform: translateY(-2px); }
 
   /* tip box */
@@ -93,17 +93,18 @@ st.markdown("""
   /* info box */
   .info-box {
     background:#e3f2fd; border-left:4px solid #1565c0; border-radius:8px;
-    padding:12px 16px; font-size:13px; color:#0d47a1; margin:12px 0;
+    padding:12px 16px; font-size:13px; color:#0a2d6e; margin:12px 0;  /* warna teks lebih gelap */
+    font-weight: 500;
   }
 
   /* comparison table */
   .comp-row { display:flex; align-items:center; padding:10px 0;
-    border-bottom:1px solid #f0f0f0; }
+    border-bottom:1px solid #e8e8e8; }
   .comp-row:last-child { border-bottom: none; }
-  .comp-label { flex:1; font-size:13px; color:#555; }
-  .comp-bar-wrap { flex:2; background:#f5f5f5; border-radius:6px; height:8px; overflow:hidden; margin:0 12px; }
+  .comp-label { flex:1; font-size:13px; color:#222; font-weight:500; }  /* #555 → #222 lebih gelap */
+  .comp-bar-wrap { flex:2; background:#e0e0e0; border-radius:6px; height:10px; overflow:hidden; margin:0 12px; }  /* track lebih gelap dan tebal */
   .comp-bar { height:100%; border-radius:6px; }
-  .comp-val { font-size:13px; font-weight:700; color:#333; width:80px; text-align:right; }
+  .comp-val { font-size:13px; font-weight:800; color:#111; width:80px; text-align:right; }  /* lebih bold dan gelap */
 
   /* section header */
   .sec-hdr {
@@ -116,11 +117,12 @@ st.markdown("""
   .pasaran-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:12px 0; }
   .pas-card { background:#fff; border:1.5px solid #e3e8f0; border-radius:12px;
     padding:14px; text-align:center; }
-  .pas-card .pas-label { font-size:11px; color:#888; font-weight:600; text-transform:uppercase;
-    letter-spacing:0.5px; margin-bottom:6px; }
-  .pas-card .pas-val  { font-size:16px; font-weight:800; color:#0d47a1; }
-  .pas-card.highlight { background:#e3f2fd; border-color:#1565c0; }
-  .pas-card.highlight .pas-val { color:#0d47a1; }
+  .pas-card .pas-label { font-size:11px; color:#555; font-weight:700; text-transform:uppercase;
+    letter-spacing:0.5px; margin-bottom:6px; }  /* #888 → #555 lebih terbaca */
+  .pas-card .pas-val  { font-size:16px; font-weight:800; color:#0a3880; }  /* sedikit lebih gelap */
+  .pas-card.highlight { background:#1565c0; border-color:#0a3880; }  /* background biru solid agar label putih terbaca */
+  .pas-card.highlight .pas-label { color:#cce0ff; }  /* label putih di bg biru */
+  .pas-card.highlight .pas-val { color:#ffffff; font-size:18px; }  /* harga putih tegas di bg biru */
 
   /* footer */
   .app-footer { text-align:center; color:#aaa; font-size:11px; margin-top:40px; padding-top:16px;
@@ -242,7 +244,28 @@ with st.container():
     hitung = st.button("🔍  Hitung Estimasi Harga", use_container_width=True)
 
 # ─── HASIL ─────────────────────────────────────────────────────────────────────
-if hitung or True:   # auto-show on load
+if not hitung:
+    st.markdown("""
+    <div style="
+        background: #f0f4ff;
+        border: 2px dashed #90a4d4;
+        border-radius: 16px;
+        padding: 36px 28px;
+        text-align: center;
+        margin-top: 20px;
+    ">
+        <div style="font-size: 48px; margin-bottom: 12px;">🏡</div>
+        <div style="font-size: 18px; font-weight: 700; color: #0d47a1; margin-bottom: 8px;">
+            Siap Menghitung Estimasi Harga
+        </div>
+        <div style="font-size: 14px; color: #5c6b8a;">
+            Masukkan luas bangunan dan luas tanah di atas,<br>
+            lalu tekan tombol <strong>Hitung Estimasi Harga</strong> untuk melihat hasilnya.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+if hitung:
     p_mlr, p_rfr, p_svr = prediksi(luas_bangunan, luas_tanah)
 
     # Best model = MLR (R² tertinggi dari penelitian)
@@ -470,6 +493,3 @@ if hitung or True:   # auto-show on load
         - Jika harga penawaran jauh di atas estimasi, negosiasikan
         - Lakukan survei lapangan untuk verifikasi kondisi fisik
         """)
-
-
-
